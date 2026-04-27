@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>West U Nails & Facial — Houston</title>
+<meta name="description" content="West U Nails & Facial offers luxury gel manicures, rejuvenating facials, and classic pedicures in Houston. Book your appointment today for expert nail care and a radiant glow." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #D4AF37;
+    --secondary: #1A1A1A;
+    --blush: #fbf2ef;
+    --pearl: #faf6f3;
+    --ink: #2a1f23;
+    --muted: #8a7780;
+    --line: rgba(42,31,35,0.08);
+    --gold: #c8a96b;
+    --shadow-sm: 0 2px 12px rgba(42,31,35,0.04);
+    --shadow-md: 0 18px 40px rgba(42,31,35,0.08);
+    --shadow-lg: 0 30px 70px rgba(42,31,35,0.14);
+  }
+  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif; font-weight: 300;
+    color: var(--ink); background: var(--pearl);
+    line-height: 1.7; overflow-x: hidden;
+  }
+  h1,h2,h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; line-height: 1.18; letter-spacing: -0.005em; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    background: rgba(250,246,243,0.85);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 500; font-style: italic;
+    color: var(--primary); letter-spacing: 0.01em;
+  }
+  .brand-line {
+    display: block; height: 1px; width: 32px; background: var(--gold);
+    margin: 4px auto 0;
+  }
+  .nav-links { display: none; gap: 40px; }
+  .nav-links a {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink); position: relative;
+  }
+  .nav-links a:hover { color: var(--primary); }
+  .nav-cta {
+    border: 1px solid var(--gold); color: var(--ink);
+    padding: 11px 24px; border-radius: 0;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .nav-cta:hover { background: var(--gold); color: #fff; }
+  @media (min-width: 880px) { .nav-links { display: flex; } }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex; align-items: center;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(232,180,184,0.35) 0, transparent 45%),
+      radial-gradient(circle at 15% 80%, rgba(212,169,116,0.20) 0, transparent 50%),
+      var(--blush);
+    overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute;
+    top: 50%; right: -120px; transform: translateY(-50%);
+    width: 520px; height: 520px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    opacity: 0.25; filter: blur(20px);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto;
+    padding: 100px 24px;
+    display: grid; gap: 60px; align-items: center;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 880px) { .hero-inner { grid-template-columns: 1.2fr 1fr; } }
+  .hero-text .eyebrow {
+    font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 26px;
+    display: inline-flex; align-items: center; gap: 14px;
+  }
+  .hero-text .eyebrow::before { content: ""; width: 30px; height: 1px; background: var(--gold); }
+  .hero h1 {
+    font-size: clamp(44px, 7vw, 88px);
+    margin-bottom: 24px; color: var(--ink);
+  }
+  .hero h1 em { font-style: italic; color: var(--primary); }
+  .hero p.lede {
+    font-size: 18px; color: var(--muted);
+    max-width: 480px; margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 32px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+    transition: all 0.3s ease; cursor: pointer; border: none;
+  }
+  .btn-primary { background: var(--ink); color: #fff; }
+  .btn-primary:hover { background: var(--primary); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: #fff; }
+  .hero-art {
+    aspect-ratio: 3/4;
+    border-radius: 8px;
+    background:
+      radial-gradient(circle at 30% 25%, rgba(255,255,255,0.5) 0, transparent 45%),
+      linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    box-shadow: var(--shadow-lg);
+    position: relative; overflow: hidden;
+  }
+  .hero-art::before {
+    content: ""; position: absolute; inset: 18px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 4px;
+  }
+  .hero-art::after {
+    content: "✿"; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 96px; color: rgba(255,255,255,0.55);
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding: 110px 24px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-head { max-width: 640px; margin: 0 auto 72px; text-align: center; }
+  .kicker {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 18px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .kicker::before, .kicker::after { content: ""; width: 24px; height: 1px; background: var(--gold); }
+  .section-head h2 { font-size: clamp(36px, 5vw, 56px); margin-bottom: 16px; font-weight: 500; }
+  .section-head h2 em { font-style: italic; color: var(--primary); }
+  .section-head p { color: var(--muted); font-size: 17px; }
+
+  /* ---------- Services ---------- */
+  .services { background: #fff; }
+  .services-grid {
+    display: grid; gap: 0;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .service-card {
+    padding: 56px 36px;
+    text-align: center;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    transition: background 0.4s ease;
+  }
+  .service-card:last-child { border-right: none; }
+  .service-card:hover { background: var(--blush); }
+  .service-num {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 13px; color: var(--gold);
+    letter-spacing: 0.32em; margin-bottom: 24px;
+    display: block;
+  }
+  .service-icon {
+    width: 64px; height: 64px; margin: 0 auto 26px;
+    border: 1px solid var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; color: var(--primary);
+  }
+  .service-card h3 { font-size: 26px; margin-bottom: 14px; }
+  .service-card p { color: var(--muted); font-size: 15px; }
+
+  /* ---------- About ---------- */
+  .about { background: var(--blush); }
+  .about-grid { display: grid; gap: 80px; align-items: center; grid-template-columns: 1fr; }
+  @media (min-width: 880px) { .about-grid { grid-template-columns: 1fr 1.1fr; } }
+  .about-art {
+    aspect-ratio: 4/5;
+    border-radius: 8px;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.45) 0, transparent 50%),
+      linear-gradient(160deg, var(--secondary) 0%, var(--primary) 100%);
+    box-shadow: var(--shadow-lg);
+    position: relative; overflow: hidden;
+  }
+  .about-art::before { content: ""; position: absolute; inset: 16px; border: 1px solid rgba(255,255,255,0.4); border-radius: 4px; }
+  .about-art::after { content: "❋"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 110px; color: rgba(255,255,255,0.5); font-family: 'Cormorant Garamond', serif; }
+  .about-text h2 { font-size: clamp(32px, 4.5vw, 50px); margin-bottom: 26px; }
+  .about-text h2 em { font-style: italic; color: var(--primary); }
+  .about-text p { color: var(--muted); margin-bottom: 18px; font-size: 16px; max-width: 520px; }
+  .quote-pull {
+    margin-top: 32px; padding-left: 24px;
+    border-left: 1px solid var(--gold);
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 22px; color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testimonials { background: #fff; }
+  .testimonial-grid { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .quote {
+    padding: 44px 32px;
+    text-align: center;
+    background: var(--blush);
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .quote:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .quote::before {
+    content: "“"; display: block; font-family: 'Cormorant Garamond', serif;
+    font-size: 64px; color: var(--gold); line-height: 0.5; margin-bottom: 12px;
+  }
+  .stars { color: var(--gold); margin-bottom: 18px; font-size: 14px; letter-spacing: 4px; }
+  .quote p {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 19px; color: var(--ink);
+    margin-bottom: 24px; line-height: 1.55;
+  }
+  .quote-author { display: flex; align-items: center; justify-content: center; gap: 12px; }
+  .avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-weight: 500; font-size: 13px;
+  }
+  .quote-author strong { display: block; font-size: 13px; font-weight: 500; }
+  .quote-author span { font-size: 11px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; }
+
+  /* ---------- Contact ---------- */
+  .contact { background: var(--ink); color: #fff; position: relative; overflow: hidden; }
+  .contact::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(232,180,184,0.18) 0, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(212,169,116,0.10) 0, transparent 50%);
+  }
+  .contact-inner { position: relative; z-index: 1; text-align: center; max-width: 720px; margin: 0 auto; }
+  .contact .kicker { color: var(--gold); }
+  .contact .kicker::before, .contact .kicker::after { background: var(--gold); }
+  .contact h2 { color: #fff; font-size: clamp(36px, 5.5vw, 60px); margin-bottom: 18px; }
+  .contact h2 em { color: var(--secondary); font-style: italic; }
+  .contact > .contact-inner > p { color: rgba(255,255,255,0.65); margin-bottom: 44px; font-size: 17px; }
+  .call-btn {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: transparent; color: #fff;
+    padding: 22px 44px;
+    border: 1px solid var(--gold);
+    font-size: 13px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .call-btn:hover { background: var(--gold); color: var(--ink); }
+  .call-btn .phone-ico {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .contact-meta {
+    margin-top: 56px;
+    display: grid; gap: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    padding-top: 44px; border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .meta-item .meta-label {
+    font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 10px;
+  }
+  .meta-item .meta-value { font-size: 15px; color: rgba(255,255,255,0.85); font-weight: 300; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--ink); color: rgba(255,255,255,0.45);
+    padding: 30px 24px; text-align: center; font-size: 12px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  footer strong { color: rgba(255,255,255,0.8); font-weight: 500; }
+
+  /* ---------- WhatsApp Float ---------- */
+  .wa-float {
+    position: fixed; right: 22px; bottom: 22px; z-index: 200;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: #25D366;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+    transition: transform 0.2s ease;
+  }
+  .wa-float:hover { transform: scale(1.08); }
+  .wa-float::before {
+    content: ""; position: absolute; inset: -4px; border-radius: 50%;
+    border: 2px solid #25D366; opacity: 0.6;
+    animation: wa-pulse 2.4s ease-out infinite;
+  }
+  @keyframes wa-pulse { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.5); opacity: 0; } }
+  .wa-float svg { width: 30px; height: 30px; fill: #fff; }
+</style>
+</head>
+<body>
+<div id="prorank-banner" style="position:sticky; top:0; z-index:9999; background:#111827; color:#ffffff; text-align:center; padding:10px 20px; font-family:-apple-system,sans-serif; font-size:13px; line-height:1.6; box-shadow:0 2px 8px rgba(0,0,0,0.4);">
+  &#128075; <strong>Hey West U Nails & Facial!</strong> This is a <strong>free demo website</strong> ProRank built for you &mdash; want it live in <strong>48 hours?</strong> &nbsp;
+  <a href="mailto:prorankweb@gmail.com" style="background:#f59e0b; color:#000; font-weight:700; padding:4px 12px; border-radius:4px; text-decoration:none; margin:0 6px;">&#9993; Reply to Our Email</a>
+  <a href="https://calendly.com/lakshya1/quick-website-chat" target="_blank" style="background:#ffffff; color:#000; font-weight:700; padding:4px 12px; border-radius:4px; text-decoration:none;">&#128197; Book a Free Call</a>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">West U Nails & Facial<span class="brand-line"></span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a href="tel:+17138382802" class="nav-cta">Book Now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="eyebrow">Houston · Est. with care</div>
+      <h1>West U Nails & Facial<br/><em>Elevate your glow with expert nail care</em></h1>
+      <p class="lede">A quiet space to unwind, refresh, and leave feeling like the very best version of yourself.</p>
+      <div class="hero-actions">
+        <a href="tel:+17138382802" class="btn btn-primary">Book Appointment</a>
+        <a href="#services" class="btn btn-ghost">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true"></div>
+  </div>
+</header>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Our Services</div>
+      <h2>Curated, considered, <em>customised</em></h2>
+      <p>Every appointment, tailored to you — by stylists who genuinely care about the result.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-num">— No. 01 —</span>
+        <div class="service-icon">✂</div>
+        <h3>Luxury Gel Manicures</h3>
+        <p>A consultation, a fresh perspective, and a finish that's unmistakably you.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">— No. 02 —</span>
+        <div class="service-icon">❋</div>
+        <h3>Rejuvenating Facial Treatments</h3>
+        <p>Premium products, gentle technique, and results that hold up beautifully.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">— No. 03 —</span>
+        <div class="service-icon">✿</div>
+        <h3>Classic Pedicure Services</h3>
+        <p>An hour just for you — to relax, refresh, and walk out glowing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-art" aria-hidden="true"></div>
+      <div class="about-text">
+        <div class="kicker">Our Story</div>
+        <h2>A studio built around <em>you</em>.</h2>
+        <p>West U Nails & Facial was founded with a single belief — that beauty rituals should feel personal, never rushed.</p>
+        <p>Today we're proud to be a quiet corner of Houston where guests can step away from the noise, settle in, and leave feeling cared for in every detail.</p>
+        <div class="quote-pull">"You shouldn't have to choose between feeling pampered and feeling like yourself. Here, you don't."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Kind Words</div>
+      <h2>What our guests <em>say</em></h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"I left feeling completely transformed — and not just my hair. The whole experience was beautiful."</p>
+        <div class="quote-author"><div class="avatar">EM</div><div><strong>Emma M.</strong><span>Regular guest</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"Found my forever salon. Every visit feels like a little treat I look forward to all week."</p>
+        <div class="quote-author"><div class="avatar">SC</div><div><strong>Sophia C.</strong><span>Guest, 2 years</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"They listened, they advised, and they delivered exactly what I wanted. Worth every minute."</p>
+        <div class="quote-author"><div class="avatar">AK</div><div><strong>Aisha K.</strong><span>First-time visit</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="visit">
+  <div class="contact-inner">
+    <div class="kicker">Visit Us</div>
+    <h2>Your appointment <em>awaits</em>.</h2>
+    <p>Same-week openings available. Walk-ins welcome when our chairs are free.</p>
+    <a href="tel:+17138382802" class="call-btn">
+      <span class="phone-ico">📞</span>
+      Call +17138382802
+    </a>
+    <div class="contact-meta">
+      <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">4001 Bellaire Blvd # E, Houston, TX 77025, United States</div></div>
+      <div class="meta-item"><div class="meta-label">Phone</div><div class="meta-value">+17138382802</div></div>
+      <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Tue–Sat · 10am – 7pm</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="year"></span> · <strong>West U Nails & Facial</strong> · Houston</footer>
+
+<a class="wa-float" href="https://wa.me/+17138382802" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l.6.952-1.034 3.78 3.413-.891zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+  </svg>
+</a>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
