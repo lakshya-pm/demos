@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Cafe | Luxury Salon & Bridal Specialists in Bandra</title>
+    <title>Color Cafe | Premium Salon & Bridal Specialists in Bandra</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script>
@@ -21,8 +21,8 @@
                             600: '#AA8C2C',
                         },
                         dark: {
-                            900: '#0a0a0a',
-                            800: '#121212',
+                            900: '#050505',
+                            800: '#111111',
                             700: '#1a1a1a',
                         }
                     }
@@ -31,329 +31,408 @@
         }
     </script>
     <style>
-        body { background-color: #0a0a0a; color: #fff; }
+        body { background-color: #050505; color: #fff; }
         .glass-nav {
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(5, 5, 5, 0.9);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
         .hero-bg {
-            background: linear-gradient(rgba(10,10,10,0.3), rgba(10,10,10,0.9)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1974&auto=format&fit=crop');
+            background: linear-gradient(rgba(5,5,5,0.4), rgba(5,5,5,0.9)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .ambiance-bg {
+            background: linear-gradient(rgba(5,5,5,0.7), rgba(5,5,5,0.9)), url('https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
         .service-card {
-            transition: all 0.4s ease;
+            transition: transform 0.4s ease, border-color 0.4s ease;
             border: 1px solid rgba(255,255,255,0.05);
         }
         .service-card:hover {
             border-color: rgba(212, 175, 55, 0.4);
             transform: translateY(-4px);
-            background: rgba(255,255,255,0.02);
         }
-        .portfolio-img {
-            transition: transform 0.7s ease;
+        .gallery-img { transition: transform 0.7s ease, opacity 0.5s ease; }
+        .gallery-container:hover .gallery-img { transform: scale(1.05); opacity: 0.8; }
+        
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .5s ease-in-out; }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
         }
-        .portfolio-container:hover .portfolio-img {
-            transform: scale(1.05);
-        }
-        /* Hide scrollbar for gallery strip */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .filter-btn.active { border-bottom-color: #D4AF37; color: #D4AF37; }
+        .gallery-item { transition: all 0.5s ease; }
+        .gallery-item.hide { display: none; }
     </style>
 </head>
-<body class="antialiased selection:bg-gold-500 selection:text-black">
+<body class="antialiased selection:bg-gold-500 selection:text-black pb-20 md:pb-0">
 
-    <!-- Navigation -->
+    <!-- Desktop Navigation -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <!-- Text-only logo per request -->
-                <span class="font-serif text-2xl tracking-widest text-white uppercase">COLOR CAFE</span>
-            </div>
+            <a href="#" class="font-serif text-2xl tracking-widest text-white uppercase">COLOR CAFE</a>
             <div class="hidden lg:flex space-x-8 text-xs tracking-[0.15em] uppercase text-gray-300 font-medium">
                 <a href="#services" class="hover:text-gold-500 transition">Services</a>
+                <a href="#bridal" class="hover:text-gold-500 transition">Bridal</a>
                 <a href="#portfolio" class="hover:text-gold-500 transition">Portfolio</a>
-                <a href="#expertise" class="hover:text-gold-500 transition">Expertise</a>
-                <a href="#faq" class="hover:text-gold-500 transition">FAQ</a>
+                <a href="#experience" class="hover:text-gold-500 transition">Experience</a>
             </div>
-            <a href="#book" class="hidden md:inline-block px-6 py-2.5 bg-gold-500 text-dark-900 hover:bg-gold-400 transition-colors uppercase tracking-[0.15em] text-xs font-bold">
+            <a href="#book" class="hidden md:inline-block px-6 py-2.5 bg-gold-500 text-dark-900 hover:bg-gold-400 transition-colors uppercase tracking-[0.15em] text-xs font-bold shadow-[0_0_15px_rgba(212,175,55,0.2)]">
                 Reserve Visit
             </a>
         </div>
     </nav>
 
+    <!-- Mobile Sticky CTA Bar -->
+    <div class="md:hidden fixed bottom-0 w-full z-50 bg-dark-900 border-t border-white/10 flex divide-x divide-white/10 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]">
+        <a href="tel:02226515181" class="flex-1 py-4 text-center text-xs font-bold uppercase tracking-widest text-white hover:bg-dark-800 transition">Call</a>
+        <a href="https://wa.me/918080126688" target="_blank" class="flex-1 py-4 text-center text-xs font-bold uppercase tracking-widest text-[#25D366] hover:bg-dark-800 transition">WhatsApp</a>
+        <a href="#book" class="flex-1 py-4 text-center text-xs font-bold uppercase tracking-widest bg-gold-500 text-black hover:bg-gold-400 transition">Book</a>
+    </div>
+
     <!-- Hero Section -->
     <section class="min-h-screen hero-bg flex items-center justify-center text-center px-4 pt-20">
         <div class="max-w-4xl mx-auto opacity-0 animate-[fadeIn_1.5s_ease-out_forwards]">
-            <p class="text-gold-500 uppercase tracking-[0.3em] text-xs md:text-sm mb-6 font-medium">Bandra's Premier Luxury Salon</p>
+            <p class="text-gold-500 uppercase tracking-[0.2em] text-xs md:text-sm mb-6 font-medium">Trusted by 10,000+ clients since 2006</p>
             <h1 class="text-5xl md:text-7xl font-serif mb-8 leading-tight">Elevate Your Aesthetic. <br><span class="italic text-gold-400">Own the Room.</span></h1>
             <p class="text-gray-300 text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-                Expert colorists, bridal masters, and celebrity-trusted stylists. Discover the ultimate transformation in a sanctuary designed for you.
+                Expert colorists, bridal masters, and celebrity-trusted stylists. Discover the ultimate transformation in Bandra's most luxurious sanctuary.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#book" class="px-8 py-4 bg-gold-500 text-dark-900 uppercase tracking-[0.15em] text-sm font-bold hover:bg-gold-400 transition-colors">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#book" class="px-8 py-4 bg-gold-500 text-dark-900 uppercase tracking-[0.15em] text-sm font-bold hover:bg-gold-400 transition-colors w-full sm:w-auto">
                     Book Your Consultation
-                </a>
-                <a href="#portfolio" class="px-8 py-4 border border-white/20 text-white uppercase tracking-[0.15em] text-sm font-bold hover:bg-white/5 transition-colors">
-                    View Portfolio
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Trust Strip -->
-    <div class="border-y border-white/10 bg-dark-900 py-6">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center divide-x divide-white/10">
-            <div class="px-4">
-                <p class="text-gold-500 font-serif text-2xl mb-1">20+</p>
-                <p class="text-xs uppercase tracking-widest text-gray-400">Years of Artistry</p>
-            </div>
-            <div class="px-4">
-                <p class="text-gold-500 font-serif text-2xl mb-1">#1</p>
-                <p class="text-xs uppercase tracking-widest text-gray-400">Bandra Flagship</p>
-            </div>
-            <div class="px-4">
-                <p class="text-gold-500 font-serif text-2xl mb-1">VIP</p>
-                <p class="text-xs uppercase tracking-widest text-gray-400">Celebrity Trusted</p>
-            </div>
-            <div class="px-4">
-                <p class="text-gold-500 font-serif text-2xl mb-1">5★</p>
-                <p class="text-xs uppercase tracking-widest text-gray-400">Bridal Specialists</p>
+    <!-- Grounded Proof & Brand Partners -->
+    <div class="border-b border-white/5 bg-dark-900 py-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-xs uppercase tracking-widest text-gray-500 text-center md:text-left">Our Official Partners & Professional Products</p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-12 opacity-50 grayscale">
+                <!-- Using text for partner logos to look clean without external assets -->
+                <span class="font-serif text-xl font-bold tracking-wider">L'ORÉAL</span>
+                <span class="font-sans text-xl font-light tracking-[0.2em]">KÉRASTASE</span>
+                <span class="font-sans text-xl font-bold tracking-widest">OLAPLEX</span>
+                <span class="font-sans text-xl tracking-wider">MOROCCANOIL</span>
             </div>
         </div>
     </div>
 
+    <!-- Why Clients Switch (Reassurance) -->
+    <section class="py-20 bg-dark-800" id="why-us">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div>
+                    <h2 class="text-3xl font-serif mb-4 leading-tight">Why Clients Choose <br><span class="text-gold-500 italic">Color Cafe</span></h2>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">We don't just cut hair; we design your entire look based on your face shape, lifestyle, and skin tone. We fix color disasters and deliver lasting results.</p>
+                </div>
+                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div class="border-l border-gold-500/30 pl-6">
+                        <h4 class="text-lg font-serif mb-2">Damage-Free Color Lifting</h4>
+                        <p class="text-gray-400 text-sm font-light">Using Olaplex and premium global bonding agents, we lift your color beautifully while maintaining absolute hair integrity.</p>
+                    </div>
+                    <div class="border-l border-gold-500/30 pl-6">
+                        <h4 class="text-lg font-serif mb-2">Bridal Specialists</h4>
+                        <p class="text-gray-400 text-sm font-light">Experts in intimate ceremonies and large-format weddings. Flawless HD makeup that stays perfect through 12-hour events.</p>
+                    </div>
+                    <div class="border-l border-gold-500/30 pl-6">
+                        <h4 class="text-lg font-serif mb-2">Master-Level Artists Only</h4>
+                        <p class="text-gray-400 text-sm font-light">Every stylist in our flagship location has years of advanced training. No junior assistants will be experimenting on you.</p>
+                    </div>
+                    <div class="border-l border-gold-500/30 pl-6">
+                        <h4 class="text-lg font-serif mb-2">Bespoke Consultations</h4>
+                        <p class="text-gray-400 text-sm font-light">We listen before we touch. Your appointment starts with a deep consultation to map out exactly what will work best for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services & Pricing Grid -->
-    <section class="py-24 bg-dark-800" id="services">
+    <section class="py-24 bg-dark-900" id="services">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 flex flex-col items-center">
                 <p class="text-gold-500 uppercase tracking-[0.2em] text-xs mb-3">Curated Treatments</p>
-                <h2 class="text-4xl md:text-5xl font-serif max-w-2xl">Signature Services</h2>
+                <h2 class="text-4xl md:text-5xl font-serif max-w-2xl mb-4">Signature Services</h2>
+                <p class="text-gray-400 font-light text-sm max-w-lg">Transparent starting prices. Final quotes are provided during your bespoke consultation based on your specific requirements.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
                 <!-- Hair -->
-                <div class="service-card bg-dark-900 p-8 flex flex-col h-full group">
+                <div class="service-card bg-dark-800 p-8 flex flex-col h-full group">
                     <div class="flex-grow">
-                        <h3 class="text-2xl font-serif mb-4 group-hover:text-gold-400 transition-colors">Bespoke Hair Design</h3>
-                        <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">From editorial cuts to transformative balayage. Our master colorists map tones perfectly to your skin profile.</p>
-                        <ul class="space-y-3 text-sm text-gray-300 font-light mb-8">
-                            <li class="flex justify-between border-b border-white/5 pb-2"><span>Precision Cut & Style</span> <span>from ₹1,500</span></li>
-                            <li class="flex justify-between border-b border-white/5 pb-2"><span>Global Coloring</span> <span>from ₹4,500</span></li>
-                            <li class="flex justify-between border-b border-white/5 pb-2"><span>Balayage & Highlights</span> <span>from ₹6,500</span></li>
+                        <h3 class="text-2xl font-serif mb-4 text-white">Hair Architecture & Color</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed mb-8">From editorial cuts to transformative balayage. Our master colorists map tones perfectly to your skin profile.</p>
+                        <ul class="space-y-4 text-sm text-gray-300 font-light mb-8">
+                            <li class="flex flex-col border-b border-white/5 pb-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-medium text-white">Precision Cut & Style</span>
+                                    <span class="text-gold-500">from ₹1,500</span>
+                                </div>
+                                <span class="text-xs text-gray-500">Includes wash, consultation, and blowdry.</span>
+                            </li>
+                            <li class="flex flex-col border-b border-white/5 pb-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-medium text-white">Global Coloring</span>
+                                    <span class="text-gold-500">from ₹4,500</span>
+                                </div>
+                                <span class="text-xs text-gray-500">Ammonia-free luxury shades.</span>
+                            </li>
+                            <li class="flex flex-col border-b border-white/5 pb-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-medium text-white">Balayage & Highlights</span>
+                                    <span class="text-gold-500">from ₹6,500</span>
+                                </div>
+                                <span class="text-xs text-gray-500">Seamless blending with bond protectors.</span>
+                            </li>
                         </ul>
                     </div>
-                    <a href="#book" class="text-gold-500 uppercase tracking-widest text-xs font-medium hover:text-white transition-colors flex items-center gap-2 mt-auto">
-                        Book Service <span class="text-lg">→</span>
-                    </a>
-                </div>
-
-                <!-- Bridal -->
-                <div class="service-card bg-dark-900 p-8 flex flex-col h-full group border-gold-500/30 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-gold-500 text-black text-[10px] uppercase tracking-widest px-3 py-1 font-bold">Most Requested</div>
-                    <div class="flex-grow">
-                        <h3 class="text-2xl font-serif mb-4 group-hover:text-gold-400 transition-colors">Bridal & Trousseau</h3>
-                        <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">Flawless, HD-ready makeup that lasts through the lights, the tears, and the entire celebration.</p>
-                        <ul class="space-y-3 text-sm text-gray-300 font-light mb-8">
-                            <li class="flex justify-between border-b border-white/5 pb-2"><span>Bridal Trial Session</span> <span>₹3,000</span></li>
-                            <li class="flex justify-between border-b border-white/5 pb-2"><span>HD Bridal Makeup</span> <span>from ₹15,000</span></li>
-                            <li class="flex justify-between border-b border-white/5 pb-2"><span>Pre-Bridal Packages</span> <span>Custom</span></li>
-                        </ul>
-                    </div>
-                    <a href="#book" class="text-gold-500 uppercase tracking-widest text-xs font-medium hover:text-white transition-colors flex items-center gap-2 mt-auto">
-                        Inquire Now <span class="text-lg">→</span>
-                    </a>
                 </div>
 
                 <!-- Spa & Skin -->
-                <div class="service-card bg-dark-900 p-8 flex flex-col h-full group">
+                <div class="service-card bg-dark-800 p-8 flex flex-col h-full group">
                     <div class="flex-grow">
-                        <h3 class="text-2xl font-serif mb-4 group-hover:text-gold-400 transition-colors">Aesthetic & Spa</h3>
-                        <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">Advanced skin therapies and deeply restorative spa rituals to reset your natural glow.</p>
-                        <ul class="space-y-3 text-sm text-gray-300 font-light mb-8">
-                            <li class="flex justify-between border-b border-white/5 pb-2"><span>Signature Facial</span> <span>from ₹3,500</span></li>
-                            <li class="flex justify-between border-b border-white/5 pb-2"><span>Keratin Treatment</span> <span>from ₹5,000</span></li>
-                            <li class="flex justify-between border-b border-white/5 pb-2"><span>Luxury Pedicure</span> <span>from ₹1,200</span></li>
+                        <h3 class="text-2xl font-serif mb-4 text-white">Aesthetic & Skin Therapies</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed mb-8">Advanced skin therapies and deeply restorative rituals to reset your natural glow.</p>
+                        <ul class="space-y-4 text-sm text-gray-300 font-light mb-8">
+                            <li class="flex flex-col border-b border-white/5 pb-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-medium text-white">Signature Bridal Facial</span>
+                                    <span class="text-gold-500">from ₹4,000</span>
+                                </div>
+                                <span class="text-xs text-gray-500">Deep hydration and glass-skin glow.</span>
+                            </li>
+                            <li class="flex flex-col border-b border-white/5 pb-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-medium text-white">Keratin / Botox Treatment</span>
+                                    <span class="text-gold-500">from ₹6,000</span>
+                                </div>
+                                <span class="text-xs text-gray-500">Frizz elimination and deep repair.</span>
+                            </li>
+                            <li class="flex flex-col border-b border-white/5 pb-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-medium text-white">Luxury Spa Pedicure</span>
+                                    <span class="text-gold-500">from ₹1,500</span>
+                                </div>
+                                <span class="text-xs text-gray-500">Premium exfoliation and massage.</span>
+                            </li>
                         </ul>
                     </div>
-                    <a href="#book" class="text-gold-500 uppercase tracking-widest text-xs font-medium hover:text-white transition-colors flex items-center gap-2 mt-auto">
-                        Book Service <span class="text-lg">→</span>
-                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dedicated Bridal Experience -->
+    <section class="py-24 bg-dark-800 relative overflow-hidden" id="bridal">
+        <!-- Accent Glow -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gold-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div class="order-2 lg:order-1 relative h-[600px] w-full">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1500&auto=format&fit=crop" alt="Bridal Makeup Prep" class="w-full h-full object-cover">
+                <div class="absolute -bottom-6 -right-6 bg-dark-900 border border-white/10 p-6 hidden md:block max-w-[280px]">
+                    <p class="font-serif text-lg text-white mb-2">"Flawless under every camera flash."</p>
+                    <p class="text-xs uppercase tracking-widest text-gold-500">— Vogue-featured styles</p>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2">
+                <p class="text-gold-500 uppercase tracking-[0.2em] text-xs mb-3">The Bridal Suite</p>
+                <h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Your Most Important Day,<br>Perfected.</h2>
+                <p class="text-gray-400 font-light leading-relaxed mb-10">We specialize in high-end bridal transformations for intimate ceremonies and large-format weddings. Our process ensures you look breathtaking, comfortable, and unequivocally yourself.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 shrink-0 border border-gold-500 text-gold-500 flex items-center justify-center font-serif text-sm">1</div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">The Consultation & Trial</h4>
+                            <p class="text-gray-400 text-sm font-light">We map out your skin type, outfit colors, and venue lighting to design your signature look. Full trials available.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 shrink-0 border border-gold-500 text-gold-500 flex items-center justify-center font-serif text-sm">2</div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Pre-Bridal Skin & Hair Prep</h4>
+                            <p class="text-gray-400 text-sm font-light">Curated months in advance, we begin deep hydration and treatments to ensure a perfect canvas.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 shrink-0 border border-gold-500 text-gold-500 flex items-center justify-center font-serif text-sm">3</div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">The Big Day</h4>
+                            <p class="text-gray-400 text-sm font-light">Our bridal team executes the HD-ready look with absolute punctuality and precision.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#book" class="inline-block mt-10 px-8 py-4 border border-gold-500 text-gold-500 uppercase tracking-[0.15em] text-xs font-bold hover:bg-gold-500 hover:text-dark-900 transition-colors">
+                    Inquire for Bridal Packages
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Filtered Portfolio -->
+    <section class="py-24 bg-dark-900" id="portfolio">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <p class="text-gold-500 uppercase tracking-[0.2em] text-xs mb-3">Real Transformations</p>
+                <h2 class="text-4xl font-serif mb-8">We Sell Outcomes.</h2>
+                
+                <!-- Filters -->
+                <div class="flex flex-wrap justify-center gap-6 border-b border-white/10 pb-4 max-w-2xl mx-auto">
+                    <button class="filter-btn active pb-4 border-b-2 border-transparent uppercase tracking-widest text-xs font-bold text-gray-400 transition-colors" data-filter="all">All Work</button>
+                    <button class="filter-btn pb-4 border-b-2 border-transparent uppercase tracking-widest text-xs font-bold text-gray-400 transition-colors hover:text-white" data-filter="hair">Hair Color</button>
+                    <button class="filter-btn pb-4 border-b-2 border-transparent uppercase tracking-widest text-xs font-bold text-gray-400 transition-colors hover:text-white" data-filter="bridal">Bridal</button>
+                    <button class="filter-btn pb-4 border-b-2 border-transparent uppercase tracking-widest text-xs font-bold text-gray-400 transition-colors hover:text-white" data-filter="skin">Skin</button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                <div class="gallery-item hair gallery-container overflow-hidden relative h-[400px] group">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=1500&auto=format&fit=crop" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-gold-500 text-[10px] tracking-widest uppercase mb-1">Color Correction</p>
+                        <p class="text-white font-serif text-xl">Ash Blonde Balayage</p>
+                    </div>
+                </div>
+                <div class="gallery-item bridal gallery-container overflow-hidden relative h-[400px] group">
+                    <img src="https://images.unsplash.com/photo-1595956428751-2401dc22ba20?q=80&w=1500&auto=format&fit=crop" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-gold-500 text-[10px] tracking-widest uppercase mb-1">HD Bridal</p>
+                        <p class="text-white font-serif text-xl">Reception Glamour</p>
+                    </div>
+                </div>
+                <div class="gallery-item hair gallery-container overflow-hidden relative h-[400px] group">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?q=80&w=1500&auto=format&fit=crop" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-gold-500 text-[10px] tracking-widest uppercase mb-1">Styling</p>
+                        <p class="text-white font-serif text-xl">Editorial Cut & Volume</p>
+                    </div>
+                </div>
+                <div class="gallery-item skin gallery-container overflow-hidden relative h-[400px] group">
+                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1500&auto=format&fit=crop" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-gold-500 text-[10px] tracking-widest uppercase mb-1">Therapy</p>
+                        <p class="text-white font-serif text-xl">Glass Skin Facial</p>
+                    </div>
+                </div>
+                <div class="gallery-item bridal gallery-container overflow-hidden relative h-[400px] group">
+                    <img src="https://images.unsplash.com/photo-1549416550-2f95474dcbb0?q=80&w=1500&auto=format&fit=crop" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-gold-500 text-[10px] tracking-widest uppercase mb-1">Traditional Bridal</p>
+                        <p class="text-white font-serif text-xl">Morning Ceremony Look</p>
+                    </div>
+                </div>
+                <div class="gallery-item hair gallery-container overflow-hidden relative h-[400px] group">
+                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1500&auto=format&fit=crop" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-gold-500 text-[10px] tracking-widest uppercase mb-1">Treatment</p>
+                        <p class="text-white font-serif text-xl">Keratin Smoothing</p>
+                    </div>
                 </div>
             </div>
             
             <div class="mt-12 text-center">
-                <p class="text-sm text-gray-500 font-light italic">* Final pricing determined during your in-salon consultation based on hair length, density, and senior artist level.</p>
+                <a href="https://www.instagram.com/colorcafesalon" target="_blank" class="text-sm uppercase tracking-widest text-gray-400 hover:text-gold-500 border-b border-gray-700 hover:border-gold-500 pb-1 transition-all">
+                    View More on Our Instagram
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Outcomes Portfolio & Social Proof -->
-    <section class="py-24 bg-dark-900 overflow-hidden" id="portfolio">
-        <div class="max-w-7xl mx-auto px-6 mb-16 flex flex-col md:flex-row items-end justify-between gap-8">
-            <div>
-                <p class="text-gold-500 uppercase tracking-[0.2em] text-xs mb-3">Real Results</p>
-                <h2 class="text-4xl md:text-5xl font-serif max-w-xl">We Sell Outcomes, Not Just Services.</h2>
-            </div>
-            <a href="https://instagram.com" target="_blank" class="text-sm uppercase tracking-widest text-gray-400 hover:text-gold-500 border-b border-gray-700 hover:border-gold-500 pb-1 transition-all">
-                Follow our Instagram
-            </a>
-        </div>
-
-        <!-- Horizontal scroll gallery -->
-        <div class="flex gap-4 overflow-x-auto px-6 pb-8 no-scrollbar snap-x">
-            <div class="min-w-[300px] md:min-w-[400px] h-[500px] portfolio-container overflow-hidden relative group snap-center flex-shrink-0">
-                <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=1500&auto=format&fit=crop" alt="Hair Color Transformation" class="w-full h-full object-cover portfolio-img">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
-                    <div>
-                        <p class="text-white font-serif text-xl">Ash Blonde Balayage</p>
-                        <p class="text-gold-500 text-xs tracking-widest uppercase mt-2">By Senior Stylist</p>
-                    </div>
-                </div>
-            </div>
-            <div class="min-w-[300px] md:min-w-[400px] h-[500px] portfolio-container overflow-hidden relative group snap-center flex-shrink-0">
-                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1500&auto=format&fit=crop" alt="Bridal Makeup" class="w-full h-full object-cover portfolio-img">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
-                    <div>
-                        <p class="text-white font-serif text-xl">HD Bridal Glam</p>
-                        <p class="text-gold-500 text-xs tracking-widest uppercase mt-2">Bridal Team</p>
-                    </div>
-                </div>
-            </div>
-            <div class="min-w-[300px] md:min-w-[400px] h-[500px] portfolio-container overflow-hidden relative group snap-center flex-shrink-0">
-                <img src="https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?q=80&w=1500&auto=format&fit=crop" alt="Precision Cut" class="w-full h-full object-cover portfolio-img">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
-                    <div>
-                        <p class="text-white font-serif text-xl">Editorial Cut & Style</p>
-                        <p class="text-gold-500 text-xs tracking-widest uppercase mt-2">Master Director</p>
-                    </div>
-                </div>
-            </div>
-            <div class="min-w-[300px] md:min-w-[400px] h-[500px] portfolio-container overflow-hidden relative group snap-center flex-shrink-0">
-                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1500&auto=format&fit=crop" alt="Keratin Treatment" class="w-full h-full object-cover portfolio-img">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
-                    <div>
-                        <p class="text-white font-serif text-xl">Keratin Smoothing</p>
-                        <p class="text-gold-500 text-xs tracking-widest uppercase mt-2">Treatment Specialist</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stylist Credibility & Testimonials -->
-    <section class="py-24 bg-dark-800" id="expertise">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <!-- Credibility -->
-            <div>
-                <p class="text-gold-500 uppercase tracking-[0.2em] text-xs mb-3">Our Artisans</p>
-                <h2 class="text-4xl font-serif mb-6">Masters of their Craft.</h2>
-                <p class="text-gray-400 font-light leading-relaxed mb-8">
-                    A beautiful space means nothing without elite talent. Our team consists exclusively of senior stylists, master colorists, and bridal specialists who train continuously on global trends. When you sit in our chair, you are in the hands of industry leaders.
-                </p>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-4">
-                        <div class="w-6 h-6 rounded-full bg-gold-500/10 flex items-center justify-center shrink-0 mt-1">
-                            <div class="w-2 h-2 rounded-full bg-gold-500"></div>
-                        </div>
-                        <div>
-                            <p class="font-medium text-white mb-1">Vidal Sassoon Trained Artists</p>
-                            <p class="text-sm text-gray-500">Precision geometry and technique.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <div class="w-6 h-6 rounded-full bg-gold-500/10 flex items-center justify-center shrink-0 mt-1">
-                            <div class="w-2 h-2 rounded-full bg-gold-500"></div>
-                        </div>
-                        <div>
-                            <p class="font-medium text-white mb-1">Certified Balayage Experts</p>
-                            <p class="text-sm text-gray-500">Seamless, non-damaging color lifts.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Reviews -->
-            <div class="relative">
-                <div class="absolute inset-0 bg-gold-500/5 blur-3xl rounded-full"></div>
-                <div class="relative space-y-6">
-                    <div class="bg-dark-900 p-8 border border-white/5 relative">
-                        <div class="text-gold-500 text-4xl font-serif absolute top-4 right-6 opacity-20">"</div>
-                        <div class="flex text-gold-500 mb-4 text-sm">★★★★★</div>
-                        <p class="text-gray-300 font-light italic mb-6">"The only salon I trust for color in Mumbai. They fixed a botched dye job from another place and delivered the perfect ash blonde without frying my hair. Absolutely premium experience."</p>
-                        <p class="text-sm font-medium uppercase tracking-widest text-white">— Priya S.</p>
-                    </div>
-                    <div class="bg-dark-900 p-8 border border-white/5 relative ml-0 md:ml-8">
-                        <div class="text-gold-500 text-4xl font-serif absolute top-4 right-6 opacity-20">"</div>
-                        <div class="flex text-gold-500 mb-4 text-sm">★★★★★</div>
-                        <p class="text-gray-300 font-light italic mb-6">"Booked them for my bridal makeup and trousseau. The team was incredibly professional, punctual, and made me look flawless in person and on HD cameras. Worth every penny."</p>
-                        <p class="text-sm font-medium uppercase tracking-widest text-white">— Ananya M.</p>
-                    </div>
-                </div>
+    <!-- Ambiance / Interior Section -->
+    <section class="py-32 ambiance-bg" id="experience">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-serif mb-6">A Sanctuary of Style.</h2>
+            <p class="text-gray-300 font-light leading-relaxed mb-10 text-lg">
+                Step away from the noise of Bandra into a curated space designed for relaxation and transformation. Premium Italian salon furniture, perfect daylight-balanced lighting for accurate color results, and a completely private VIP suite.
+            </p>
+            <div class="inline-flex items-center gap-2 border border-gold-500/50 px-6 py-3 bg-black/40 backdrop-blur-md">
+                <span class="w-2 h-2 rounded-full bg-gold-500"></span>
+                <span class="text-white text-sm tracking-widest uppercase font-medium">Bandra Flagship Location</span>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-24 bg-dark-900 border-t border-white/5" id="faq">
+    <section class="py-24 bg-dark-800" id="faq">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-serif">Frequently Asked Questions</h2>
+                <p class="text-gold-500 uppercase tracking-[0.2em] text-xs mb-3">Clear Information</p>
+                <h2 class="text-4xl font-serif">Questions & Booking Policies</h2>
             </div>
             
             <div class="space-y-4">
-                <details class="group bg-dark-800 p-6 cursor-pointer border border-white/5 open:border-gold-500/30 transition-colors">
-                    <summary class="flex justify-between items-center font-medium list-none text-lg">
+                <details class="group bg-dark-900 p-6 cursor-pointer border border-white/5 open:border-gold-500/30 transition-all rounded-sm">
+                    <summary class="flex justify-between items-center font-medium list-none text-lg text-white group-hover:text-gold-400 transition-colors">
                         Do I need an appointment, or do you take walk-ins?
-                        <span class="transition group-open:rotate-180 text-gold-500">↓</span>
+                        <span class="transition-transform group-open:rotate-180 text-gold-500">↓</span>
                     </summary>
-                    <p class="text-gray-400 font-light mt-4 leading-relaxed text-sm">To ensure you receive dedicated time with our senior artists, we highly recommend booking an appointment in advance. Walk-ins are accommodated only if a slot is available.</p>
+                    <div class="mt-4 border-t border-white/5 pt-4">
+                        <p class="text-gray-400 font-light leading-relaxed text-sm">To ensure you receive dedicated time with our senior artists without rushing, we highly recommend booking an appointment in advance. Walk-ins are accommodated only if a slot is available.</p>
+                    </div>
                 </details>
                 
-                <details class="group bg-dark-800 p-6 cursor-pointer border border-white/5 open:border-gold-500/30 transition-colors">
-                    <summary class="flex justify-between items-center font-medium list-none text-lg">
-                        Do you offer bridal makeup trials?
-                        <span class="transition group-open:rotate-180 text-gold-500">↓</span>
+                <details class="group bg-dark-900 p-6 cursor-pointer border border-white/5 open:border-gold-500/30 transition-all rounded-sm">
+                    <summary class="flex justify-between items-center font-medium list-none text-lg text-white group-hover:text-gold-400 transition-colors">
+                        How much does bridal makeup cost?
+                        <span class="transition-transform group-open:rotate-180 text-gold-500">↓</span>
                     </summary>
-                    <p class="text-gray-400 font-light mt-4 leading-relaxed text-sm">Yes, we offer paid bridal trials in our studio. The cost of the trial is fully adjusted against your final bridal package if you choose to book with us.</p>
+                    <div class="mt-4 border-t border-white/5 pt-4">
+                        <p class="text-gray-400 font-light leading-relaxed text-sm">Bridal makeup packages start from ₹15,000 depending on the events, location, and the seniority of the artist. We provide custom quotes during your bridal consultation and trial.</p>
+                    </div>
                 </details>
                 
-                <details class="group bg-dark-800 p-6 cursor-pointer border border-white/5 open:border-gold-500/30 transition-colors">
-                    <summary class="flex justify-between items-center font-medium list-none text-lg">
+                <details class="group bg-dark-900 p-6 cursor-pointer border border-white/5 open:border-gold-500/30 transition-all rounded-sm">
+                    <summary class="flex justify-between items-center font-medium list-none text-lg text-white group-hover:text-gold-400 transition-colors">
                         Is there parking available near the salon?
-                        <span class="transition group-open:rotate-180 text-gold-500">↓</span>
+                        <span class="transition-transform group-open:rotate-180 text-gold-500">↓</span>
                     </summary>
-                    <p class="text-gray-400 font-light mt-4 leading-relaxed text-sm">Valet parking is available at our Waterfield Road flagship location. Simply pull up to the entrance and our team will assist you.</p>
+                    <div class="mt-4 border-t border-white/5 pt-4">
+                        <p class="text-gray-400 font-light leading-relaxed text-sm">Yes, valet parking is available at our Waterfield Road flagship location. Simply pull up to the entrance and our team will securely park your vehicle.</p>
+                    </div>
                 </details>
                 
-                <details class="group bg-dark-800 p-6 cursor-pointer border border-white/5 open:border-gold-500/30 transition-colors">
-                    <summary class="flex justify-between items-center font-medium list-none text-lg">
+                <details class="group bg-dark-900 p-6 cursor-pointer border border-white/5 open:border-gold-500/30 transition-all rounded-sm">
+                    <summary class="flex justify-between items-center font-medium list-none text-lg text-white group-hover:text-gold-400 transition-colors">
                         What is your cancellation policy?
-                        <span class="transition group-open:rotate-180 text-gold-500">↓</span>
+                        <span class="transition-transform group-open:rotate-180 text-gold-500">↓</span>
                     </summary>
-                    <p class="text-gray-400 font-light mt-4 leading-relaxed text-sm">We request at least 24 hours notice for any cancellations or rescheduling to avoid a cancellation fee, as we block significant time for major chemical treatments.</p>
+                    <div class="mt-4 border-t border-white/5 pt-4">
+                        <p class="text-gray-400 font-light leading-relaxed text-sm">We request at least 24 hours notice for any cancellations or rescheduling to avoid a fee, as we block significant dedicated time for major chemical treatments and bridal trials.</p>
+                    </div>
                 </details>
             </div>
         </div>
     </section>
 
     <!-- Strong Booking Funnel & Contact -->
-    <section class="bg-black pt-24 pb-12 border-t border-white/10" id="book">
+    <section class="bg-black pt-24 pb-12 border-t border-white/5" id="book">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
             <!-- Contact Info -->
             <div>
                 <h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Secure Your<br><span class="text-gold-500 italic">Transformation.</span></h2>
                 <p class="text-gray-400 font-light leading-relaxed mb-10 max-w-md">
-                    Our schedule fills up quickly. Reach out via WhatsApp or call us directly to secure a consultation with our senior artists.
+                    Our schedule fills up quickly. Book your consultation to guarantee a slot with our master stylists.
                 </p>
                 
                 <div class="space-y-8">
                     <div>
-                        <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Flagship Location</p>
+                        <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Bandra Flagship</p>
                         <p class="text-lg text-white font-light">156 Waterfield Road, Ground Floor, Kailash Building<br>Next to China Gate, Bandra (W), Mumbai 400050</p>
-                        <a href="https://maps.google.com" target="_blank" class="text-gold-500 text-sm mt-2 inline-block hover:text-gold-400 border-b border-gold-500/30 pb-0.5">Get Directions →</a>
+                        <a href="https://maps.google.com/?q=Color+Cafe+Salon+156+Waterfield+Road+Bandra+West+Mumbai" target="_blank" class="text-gold-500 text-sm mt-2 inline-block hover:text-gold-400 border-b border-gold-500/30 pb-0.5">Open in Google Maps →</a>
                     </div>
                     
                     <div>
@@ -362,10 +441,9 @@
                     </div>
                     
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <a href="tel:02226515181" class="flex-1 text-center py-4 border border-white/20 hover:bg-white/5 transition-colors font-medium tracking-widest uppercase text-xs">
+                        <a href="tel:+912226515181" class="flex-1 text-center py-4 border border-white/20 hover:bg-white/5 transition-colors font-medium tracking-widest uppercase text-xs">
                             Call 022 2651-5181
                         </a>
-                        <!-- WhatsApp CTA -->
                         <a href="https://wa.me/918080126688" target="_blank" class="flex-1 text-center py-4 bg-[#25D366] text-black font-bold tracking-widest uppercase text-xs hover:bg-[#20bd5a] transition-colors flex items-center justify-center gap-2">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 .002 5.385.002 12.033c0 2.127.553 4.202 1.605 6.035L.044 24l6.082-1.595c1.782.955 3.778 1.458 5.902 1.458h.005c6.645 0 12.029-5.384 12.029-12.031C24.062 5.385 18.678 0 12.031 0zm0 21.905h-.003c-1.8 0-3.56-.484-5.105-1.402l-.366-.217-3.792.994.996-3.696-.239-.379c-1.008-1.597-1.539-3.447-1.539-5.342 0-5.348 4.351-9.699 9.7-9.699 5.348 0 9.699 4.35 9.699 9.699 0 5.348-4.351 9.699-9.699 9.699zm5.321-7.269c-.291-.146-1.724-.852-1.99-.949-.267-.098-.462-.146-.656.146-.194.293-.751.949-.922 1.144-.171.196-.341.22-.633.073-.291-.146-1.23-.454-2.342-1.444-.865-.77-1.448-1.722-1.619-2.015-.171-.293-.018-.452.128-.598.131-.131.291-.341.437-.512.146-.171.194-.293.291-.488.098-.195.049-.366-.024-.512-.073-.146-.656-1.583-.898-2.167-.238-.57-.481-.493-.656-.503-.171-.008-.366-.008-.56-.008-.194 0-.51.073-.777.366-.267.293-1.021.998-1.021 2.434 0 1.436 1.045 2.827 1.191 3.022.146.195 2.062 3.147 4.995 4.412.698.3 1.242.48 1.666.614.701.222 1.339.191 1.84.116.562-.085 1.724-.705 1.966-1.388.243-.683.243-1.267.171-1.388-.073-.122-.267-.195-.558-.341z"/></svg>
                             WhatsApp Us
@@ -374,51 +452,99 @@
                 </div>
             </div>
             
-            <!-- Book Form Form -->
-            <div class="bg-dark-900 p-10 border border-white/10 rounded-sm">
+            <!-- Book Form -->
+            <div class="bg-dark-900 p-8 md:p-10 border border-white/5 rounded-sm relative">
+                <div id="form-success" class="hidden absolute inset-0 bg-dark-900 z-10 flex flex-col items-center justify-center p-8 text-center border border-gold-500/30">
+                    <div class="w-16 h-16 rounded-full border-2 border-gold-500 text-gold-500 flex items-center justify-center text-2xl mb-4">✓</div>
+                    <h4 class="text-2xl font-serif text-white mb-2">Request Received</h4>
+                    <p class="text-gray-400 font-light text-sm">Our front desk will contact you shortly to confirm your booking and time.</p>
+                    <button type="button" onclick="document.getElementById('form-success').classList.add('hidden')" class="mt-6 text-gold-500 text-xs uppercase tracking-widest border-b border-gold-500 pb-1 hover:text-white transition">Book Another</button>
+                </div>
+
                 <h4 class="text-2xl font-serif mb-2 text-white">Request Consultation</h4>
-                <p class="text-sm text-gray-400 mb-8 font-light">Leave your details and our front desk will contact you to finalize your booking.</p>
-                <form class="space-y-6">
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Full Name</label>
-                        <input type="text" class="w-full bg-dark-800 border border-white/10 p-4 text-sm focus:outline-none focus:border-gold-500 transition-colors text-white" required>
+                <p class="text-sm text-gray-400 mb-8 font-light">Leave your details and we will coordinate your visit.</p>
+                
+                <form id="booking-form" onsubmit="event.preventDefault(); document.getElementById('form-success').classList.remove('hidden');" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Full Name</label>
+                            <input type="text" placeholder="e.g. Anjali Sharma" class="w-full bg-dark-800 border border-white/5 p-4 text-sm focus:outline-none focus:border-gold-500/50 transition-colors text-white" required>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Phone Number</label>
+                            <input type="tel" placeholder="+91" class="w-full bg-dark-800 border border-white/5 p-4 text-sm focus:outline-none focus:border-gold-500/50 transition-colors text-white" required>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Phone Number</label>
-                        <input type="tel" class="w-full bg-dark-800 border border-white/10 p-4 text-sm focus:outline-none focus:border-gold-500 transition-colors text-white" required>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Service Needed</label>
+                            <select class="w-full bg-dark-800 border border-white/5 p-4 text-sm focus:outline-none focus:border-gold-500/50 transition-colors text-white appearance-none cursor-pointer" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option>Hair Color & Architecture</option>
+                                <option>Bridal Consultation</option>
+                                <option>Skin & Spa</option>
+                                <option>Other / Not Sure</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Preferred Date</label>
+                            <input type="date" class="w-full bg-dark-800 border border-white/5 p-4 text-sm focus:outline-none focus:border-gold-500/50 transition-colors text-gray-400 cursor-pointer" required>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Service of Interest</label>
-                        <select class="w-full bg-dark-800 border border-white/10 p-4 text-sm focus:outline-none focus:border-gold-500 transition-colors text-white appearance-none">
-                            <option>Hair Color & Styling</option>
-                            <option>Bridal & Makeup</option>
-                            <option>Skin & Spa Therapies</option>
-                            <option>General Consultation</option>
-                        </select>
-                    </div>
-                    <button type="button" class="w-full mt-4 bg-gold-500 text-black py-4 uppercase tracking-widest text-sm font-bold hover:bg-gold-400 transition-colors shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-                        Submit Request
+                    
+                    <button type="submit" class="w-full mt-2 bg-gold-500 text-black py-4 uppercase tracking-[0.15em] text-xs font-bold hover:bg-gold-400 transition-colors shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                        Confirm Request
                     </button>
+                    <p class="text-[10px] text-gray-600 text-center uppercase tracking-widest mt-4">No payment required to request</p>
                 </form>
             </div>
         </div>
         
         <!-- Footer Bottom -->
-        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest">
+        <div class="max-w-7xl mx-auto px-6 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 uppercase tracking-[0.15em]">
             <p>&copy; 2026 Color Cafe Salon. All Rights Reserved.</p>
-            <div class="space-x-6 mt-4 md:mt-0">
-                <a href="#" class="hover:text-gold-500 transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-gold-500 transition-colors">Terms of Service</a>
-                <a href="#" class="hover:text-gold-500 transition-colors">Career</a>
+            <div class="flex gap-6 mt-6 md:mt-0">
+                <a href="#services" class="hover:text-gold-500 transition-colors">Services</a>
+                <a href="#faq" class="hover:text-gold-500 transition-colors">FAQ</a>
+                <a href="#book" class="hover:text-gold-500 transition-colors">Contact</a>
             </div>
         </div>
     </footer>
 
-    <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <!-- Filter JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.gallery-item');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active from all
+                    buttons.forEach(btn => {
+                        btn.classList.remove('active', 'text-white');
+                        btn.classList.add('border-transparent');
+                    });
+                    
+                    // Add active to clicked
+                    button.classList.add('active', 'text-white');
+                    button.classList.remove('border-transparent');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    items.forEach(item => {
+                        if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                            item.classList.remove('hide');
+                            setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.9)';
+                            setTimeout(() => { item.classList.add('hide'); }, 400);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
