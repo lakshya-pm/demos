@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière Studios — Premium Wedding Photography, Mumbai</title>
+    <meta name="description" content="Lumière Studios — Cinematic wedding photography and films in Mumbai. Capturing your love story with artistry and emotion.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>tailwind.config={theme:{extend:{colors:{gold:{400:'#D4AF37',500:'#C5A028'},dark:{900:'#0A0A0A',800:'#111111'}}}}}</script>
+    <style>
+        body{font-family:'Inter',sans-serif;background:#0A0A0A;color:#D4D4D4}
+        .font-serif{font-family:'Cormorant Garamond',serif}
+        .hero-overlay{background:linear-gradient(180deg,rgba(10,10,10,0.3) 0%,rgba(10,10,10,0.9) 100%)}
+        .card-hover:hover{transform:translateY(-4px)}
+        .card-hover{transition:all 0.4s ease}
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-serif text-2xl font-bold text-white">Lumière</span>
+            <div class="hidden md:flex gap-8 text-sm text-gray-500">
+                <a href="#portfolio" class="hover:text-gold-400 transition">Portfolio</a>
+                <a href="#packages" class="hover:text-gold-400 transition">Packages</a>
+                <a href="#about" class="hover:text-gold-400 transition">About</a>
+                <a href="#book" class="hover:text-gold-400 transition">Book</a>
+            </div>
+            <a href="#book" class="border border-gold-400/50 text-gold-400 px-5 py-2 rounded-full text-sm hover:bg-gold-400 hover:text-black transition">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center text-center">
+        <img src="assets/ceremony.png" alt="Wedding" class="absolute inset-0 w-full h-full object-cover">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 max-w-4xl px-6">
+            <p class="text-gold-400 uppercase tracking-[0.3em] text-xs mb-6">Award-Winning Wedding Photography</p>
+            <h1 class="font-serif text-5xl md:text-7xl text-white leading-tight mb-6">Capturing Timeless<br><em class="text-gold-400">Love Stories</em></h1>
+            <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">We don't just photograph weddings — we craft visual heirlooms that your grandchildren will treasure. Based in Mumbai, available worldwide.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#book" class="bg-gold-400 text-black px-8 py-4 rounded-full font-semibold hover:bg-gold-500 transition">Check Availability →</a>
+                <a href="#portfolio" class="border border-white/20 text-white px-8 py-4 rounded-full hover:border-gold-400 transition">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-16 bg-dark-900 border-y border-white/5">
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div><p class="font-serif text-3xl text-gold-400">500+</p><p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Weddings Shot</p></div>
+            <div><p class="font-serif text-3xl text-gold-400">12</p><p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Years Experience</p></div>
+            <div><p class="font-serif text-3xl text-gold-400">4.9★</p><p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Google Rating</p></div>
+            <div><p class="font-serif text-3xl text-gold-400">50+</p><p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Destination Weddings</p></div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="py-24 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-gold-400 text-xs uppercase tracking-widest mb-3 text-center">Our Work</p>
+            <h2 class="font-serif text-3xl md:text-5xl text-white text-center mb-12">Selected <em>Stories</em></h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card-hover relative overflow-hidden rounded-2xl h-[400px] group">
+                    <img src="assets/ceremony.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+                        <p class="text-gold-400 text-xs uppercase tracking-widest mb-1">Traditional Wedding</p>
+                        <p class="font-serif text-2xl text-white">The Sharma Celebration</p>
+                        <p class="text-gray-400 text-sm mt-1">Mumbai · 3-Day Wedding</p>
+                    </div>
+                </div>
+                <div class="card-hover relative overflow-hidden rounded-2xl h-[400px] group">
+                    <img src="assets/candid.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+                        <p class="text-gold-400 text-xs uppercase tracking-widest mb-1">Candid Moments</p>
+                        <p class="font-serif text-2xl text-white">Getting Ready — Joy Unfiltered</p>
+                        <p class="text-gray-400 text-sm mt-1">Pre-wedding · Bridal Suite</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages -->
+    <section id="packages" class="py-24 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-gold-400 text-xs uppercase tracking-widest mb-3 text-center">Investment</p>
+            <h2 class="font-serif text-3xl md:text-5xl text-white text-center mb-12">Wedding <em>Packages</em></h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-hover bg-dark-900 border border-white/10 rounded-2xl p-8">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mb-4">Essential</p>
+                    <p class="font-serif text-4xl text-white mb-1">₹75,000</p>
+                    <p class="text-gray-600 text-sm mb-6">Single-day coverage</p>
+                    <ul class="space-y-3 text-sm text-gray-400 mb-8">
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>8 hours coverage</li>
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>1 lead photographer</li>
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>300+ edited photos</li>
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>Online gallery</li>
+                    </ul>
+                    <a href="#book" class="block text-center border border-gold-400/50 text-gold-400 py-3 rounded-full text-sm hover:bg-gold-400 hover:text-black transition">Enquire</a>
+                </div>
+                <div class="card-hover bg-dark-900 border-2 border-gold-400/40 rounded-2xl p-8 relative">
+                    <div class="absolute -top-3 right-6 bg-gold-400 text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase">Most Booked</div>
+                    <p class="text-xs text-gold-400 uppercase tracking-widest mb-4">Signature</p>
+                    <p class="font-serif text-4xl text-white mb-1">₹1,50,000</p>
+                    <p class="text-gray-600 text-sm mb-6">Multi-day coverage</p>
+                    <ul class="space-y-3 text-sm text-gray-400 mb-8">
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>2-day full coverage</li>
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>2 photographers + assistant</li>
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>600+ edited photos</li>
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>5-min highlight film</li>
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>Pre-wedding shoot included</li>
+                    </ul>
+                    <a href="#book" class="block text-center bg-gold-400 text-black py-3 rounded-full text-sm font-bold hover:bg-gold-500 transition">Enquire</a>
+                </div>
+                <div class="card-hover bg-dark-900 border border-white/10 rounded-2xl p-8">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mb-4">Luxury</p>
+                    <p class="font-serif text-4xl text-white mb-1">₹3,00,000+</p>
+                    <p class="text-gray-600 text-sm mb-6">The complete experience</p>
+                    <ul class="space-y-3 text-sm text-gray-400 mb-8">
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>3-day unlimited coverage</li>
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>3 photographers + videographer</li>
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>1000+ edited photos</li>
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>15-min cinematic film</li>
+                        <li class="flex gap-2"><span class="text-gold-400">✓</span>Premium wedding album</li>
+                    </ul>
+                    <a href="#book" class="block text-center border border-gold-400/50 text-gold-400 py-3 rounded-full text-sm hover:bg-gold-400 hover:text-black transition">Enquire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="book" class="py-24 bg-dark-900">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <p class="text-gold-400 text-xs uppercase tracking-widest mb-3">Let's Talk</p>
+                <h2 class="font-serif text-3xl md:text-4xl text-white mb-4">Check <em>Availability</em></h2>
+                <p class="text-gray-400">Tell us about your wedding and we'll get back to you within 24 hours.</p>
+            </div>
+            <form id="booking-form" class="bg-dark-800 border border-white/10 rounded-2xl p-8 space-y-5">
+                <div class="grid grid-cols-2 gap-4">
+                    <div><label class="text-xs text-gray-500 block mb-1.5">Your Name</label><input type="text" placeholder="Full name" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:border-gold-400 focus:outline-none transition"></div>
+                    <div><label class="text-xs text-gray-500 block mb-1.5">Phone</label><input type="tel" placeholder="+91 98765 43210" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:border-gold-400 focus:outline-none transition"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div><label class="text-xs text-gray-500 block mb-1.5">Wedding Date</label><input type="date" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-400 focus:border-gold-400 focus:outline-none transition"></div>
+                    <div><label class="text-xs text-gray-500 block mb-1.5">Location</label><input type="text" placeholder="City / Venue" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:border-gold-400 focus:outline-none transition"></div>
+                </div>
+                <div><label class="text-xs text-gray-500 block mb-1.5">Package Interest</label><select class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-400 focus:border-gold-400 focus:outline-none transition"><option>Essential (₹75,000)</option><option>Signature (₹1,50,000)</option><option>Luxury (₹3,00,000+)</option><option>Not sure yet</option></select></div>
+                <button type="submit" class="w-full bg-gold-400 text-black py-4 rounded-xl font-bold text-sm hover:bg-gold-500 transition">Check Availability →</button>
+            </form>
+            <div id="form-success" class="hidden bg-dark-800 border border-gold-400/30 rounded-2xl p-8 text-center">
+                <div class="text-4xl mb-4">📸</div>
+                <h3 class="font-serif text-2xl text-gold-400 mb-2">Request Received!</h3>
+                <p class="text-gray-400 text-sm">We'll review your date and get back within 24 hours with availability and a personalized quote.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-dark-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="font-serif text-xl text-white mb-2">Lumière Studios</p>
+            <p class="text-gray-600 text-sm mb-4">Mumbai, Maharashtra · Available for Destination Weddings</p>
+            <div class="flex justify-center gap-6 text-sm text-gray-600">
+                <a href="https://wa.me/919999999999" class="hover:text-gold-400 transition">WhatsApp</a>
+                <a href="https://instagram.com" class="hover:text-gold-400 transition">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="fixed bottom-0 inset-x-0 bg-dark-900/95 backdrop-blur-md border-t border-white/10 p-3 flex gap-2 md:hidden z-50">
+        <a href="https://wa.me/919999999999" class="flex-1 bg-green-600 text-white text-center py-3 rounded-xl text-sm font-bold">💬 WhatsApp</a>
+        <a href="tel:+919999999999" class="flex-1 bg-gold-400 text-black text-center py-3 rounded-xl text-sm font-bold">📞 Call</a>
+    </div>
+
+    <script>
+        document.getElementById('booking-form').addEventListener('submit',function(e){
+            e.preventDefault();this.classList.add('hidden');document.getElementById('form-success').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
