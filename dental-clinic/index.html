@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmileCraft Dental — Advanced Dental Care, Mumbai</title>
+    <meta name="description" content="SmileCraft Dental — Trusted dental clinic in Mumbai. Cosmetic dentistry, root canals, implants, braces & more. Book your appointment today.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>tailwind.config={theme:{extend:{colors:{teal:{400:'#2DD4BF',500:'#14B8A6',600:'#0D9488'},dark:{900:'#0A1628',800:'#0F1D32',700:'#162A46'}}}}}</script>
+    <style>
+        body{font-family:'Inter',sans-serif;background:#0A1628;color:#D1D5DB}
+        .card-hover:hover{transform:translateY(-4px);border-color:rgba(45,212,191,0.3)}
+        .card-hover{transition:all 0.3s ease}
+        .glow{box-shadow:0 0 30px rgba(45,212,191,0.1)}
+    </style>
+</head>
+<body class="antialiased">
+    <nav class="fixed top-0 w-full z-50 bg-dark-900/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2"><div class="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">S</div><span class="font-bold text-lg text-white">SmileCraft</span></div>
+            <div class="hidden md:flex gap-8 text-sm text-gray-500">
+                <a href="#services" class="hover:text-teal-400 transition">Services</a>
+                <a href="#why" class="hover:text-teal-400 transition">Why Us</a>
+                <a href="#book" class="hover:text-teal-400 transition">Book</a>
+            </div>
+            <a href="#book" class="bg-teal-500 hover:bg-teal-600 text-white px-5 py-2 rounded-lg text-sm font-medium transition">Book Appointment</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center pt-20">
+        <img src="assets/clinic.png" alt="Dental Clinic" class="absolute inset-0 w-full h-full object-cover opacity-30">
+        <div class="absolute inset-0 bg-gradient-to-r from-dark-900 via-dark-900/90 to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <p class="text-teal-400 text-xs uppercase tracking-[0.2em] mb-6 font-medium">Trusted Dental Care Since 2010</p>
+            <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">Your Smile,<br>Our <span class="text-teal-400">Priority</span></h1>
+            <p class="text-gray-400 text-lg mb-8 max-w-xl">Advanced dental treatments in a calm, modern environment. From routine check-ups to complete smile makeovers — we've got you covered.</p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                <a href="#book" class="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-center transition">Book Free Consultation →</a>
+                <a href="https://wa.me/919999999999" class="border border-white/20 hover:border-teal-400 text-white px-8 py-4 rounded-xl font-medium text-center transition">💬 WhatsApp Us</a>
+            </div>
+            <div class="grid grid-cols-3 gap-4 max-w-md">
+                <div class="glow bg-dark-800 border border-white/10 rounded-xl p-4 text-center"><p class="text-2xl font-bold text-teal-400">15+</p><p class="text-[10px] text-gray-500 mt-1">Years Exp.</p></div>
+                <div class="glow bg-dark-800 border border-white/10 rounded-xl p-4 text-center"><p class="text-2xl font-bold text-teal-400">10K+</p><p class="text-[10px] text-gray-500 mt-1">Patients</p></div>
+                <div class="glow bg-dark-800 border border-white/10 rounded-xl p-4 text-center"><p class="text-2xl font-bold text-teal-400">4.9★</p><p class="text-[10px] text-gray-500 mt-1">Google</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-teal-400 text-xs uppercase tracking-widest mb-3 font-medium">Our Services</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Complete Dental <span class="text-teal-400">Solutions</span></h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-dark-800 border border-white/10 rounded-2xl p-6"><div class="text-2xl mb-3">🦷</div><h3 class="font-bold text-white mb-2">General Dentistry</h3><p class="text-gray-400 text-sm">Cleanings, fillings, check-ups & preventive care for the whole family.</p><p class="text-teal-400 text-sm font-medium mt-3">From ₹500</p></div>
+                <div class="card-hover bg-dark-800 border border-white/10 rounded-2xl p-6"><div class="text-2xl mb-3">✨</div><h3 class="font-bold text-white mb-2">Cosmetic Dentistry</h3><p class="text-gray-400 text-sm">Teeth whitening, veneers, smile design & aesthetic contouring.</p><p class="text-teal-400 text-sm font-medium mt-3">From ₹3,000</p></div>
+                <div class="card-hover bg-dark-800 border border-white/10 rounded-2xl p-6"><div class="text-2xl mb-3">🔧</div><h3 class="font-bold text-white mb-2">Root Canal Treatment</h3><p class="text-gray-400 text-sm">Pain-free RCT with latest rotary instruments & single-visit options.</p><p class="text-teal-400 text-sm font-medium mt-3">From ₹4,000</p></div>
+                <div class="card-hover bg-dark-800 border border-white/10 rounded-2xl p-6"><div class="text-2xl mb-3">📐</div><h3 class="font-bold text-white mb-2">Braces & Aligners</h3><p class="text-gray-400 text-sm">Metal braces, ceramic braces & invisible aligners for perfect alignment.</p><p class="text-teal-400 text-sm font-medium mt-3">From ₹25,000</p></div>
+                <div class="card-hover bg-dark-800 border border-white/10 rounded-2xl p-6"><div class="text-2xl mb-3">🏗️</div><h3 class="font-bold text-white mb-2">Dental Implants</h3><p class="text-gray-400 text-sm">Permanent tooth replacement with titanium implants & crowns.</p><p class="text-teal-400 text-sm font-medium mt-3">From ₹20,000</p></div>
+                <div class="card-hover bg-dark-800 border border-white/10 rounded-2xl p-6"><div class="text-2xl mb-3">👶</div><h3 class="font-bold text-white mb-2">Kids Dentistry</h3><p class="text-gray-400 text-sm">Gentle pediatric care, sealants, fluoride treatments in a fun environment.</p><p class="text-teal-400 text-sm font-medium mt-3">From ₹300</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why" class="py-24 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-teal-400 text-xs uppercase tracking-widest mb-3 font-medium text-center">Why Choose Us</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Modern Care, <span class="text-teal-400">Real Results</span></h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6"><div class="w-14 h-14 bg-teal-500/10 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">🏥</div><h4 class="font-bold text-white mb-2">Latest Equipment</h4><p class="text-gray-400 text-sm">Digital X-rays, laser dentistry & CAD/CAM technology for precise results.</p></div>
+                <div class="text-center p-6"><div class="w-14 h-14 bg-teal-500/10 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">😊</div><h4 class="font-bold text-white mb-2">Pain-Free Promise</h4><p class="text-gray-400 text-sm">Advanced numbing techniques ensuring comfortable treatments every time.</p></div>
+                <div class="text-center p-6"><div class="w-14 h-14 bg-teal-500/10 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">⏰</div><h4 class="font-bold text-white mb-2">Flexible Hours</h4><p class="text-gray-400 text-sm">Open 7 days. Early morning & late evening slots for working professionals.</p></div>
+                <div class="text-center p-6"><div class="w-14 h-14 bg-teal-500/10 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">💳</div><h4 class="font-bold text-white mb-2">EMI Available</h4><p class="text-gray-400 text-sm">0% EMI options on major treatments. Insurance claims accepted.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-dark-900">
+        <div class="max-w-5xl mx-auto px-6">
+            <p class="text-teal-400 text-xs uppercase tracking-widest mb-3 font-medium text-center">Patient Reviews</p>
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">What Our Patients Say</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-dark-800 border border-white/10 rounded-2xl p-6"><div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div><p class="text-gray-300 text-sm italic mb-4">"Got my root canal done here — completely pain-free! Dr. Shah explained everything clearly. Best dental experience I've had."</p><div class="flex items-center gap-3 border-t border-white/10 pt-4"><div class="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center text-xs font-bold text-white">AK</div><div><p class="font-semibold text-sm text-white">Amit Kulkarni</p><p class="text-[11px] text-gray-500">Root Canal Patient</p></div></div></div>
+                <div class="bg-dark-800 border border-white/10 rounded-2xl p-6"><div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div><p class="text-gray-300 text-sm italic mb-4">"My kids actually look forward to their dental visits now. The team is so patient and friendly with children."</p><div class="flex items-center gap-3 border-t border-white/10 pt-4"><div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-xs font-bold text-white">NM</div><div><p class="font-semibold text-sm text-white">Neha Mehta</p><p class="text-[11px] text-gray-500">Parent</p></div></div></div>
+                <div class="bg-dark-800 border border-white/10 rounded-2xl p-6"><div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div><p class="text-gray-300 text-sm italic mb-4">"Got invisible aligners here and the results are amazing. The EMI option made it very affordable."</p><div class="flex items-center gap-3 border-t border-white/10 pt-4"><div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-xs font-bold text-white">RS</div><div><p class="font-semibold text-sm text-white">Rohan Shah</p><p class="text-[11px] text-gray-500">Aligners Patient</p></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="book" class="py-24 bg-dark-800">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <p class="text-teal-400 text-xs uppercase tracking-widest mb-3">Book Today</p>
+                <h2 class="text-3xl font-bold text-white mb-4">Free <span class="text-teal-400">Consultation</span></h2>
+                <p class="text-gray-400">First check-up is on us. Walk in or book ahead — we'll take care of the rest.</p>
+            </div>
+            <form id="book-form" class="bg-dark-900 border border-white/10 rounded-2xl p-8 space-y-5">
+                <div class="grid grid-cols-2 gap-4">
+                    <div><label class="text-xs text-gray-500 block mb-1.5">Full Name</label><input type="text" placeholder="Your name" class="w-full bg-dark-800 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:border-teal-400 focus:outline-none transition"></div>
+                    <div><label class="text-xs text-gray-500 block mb-1.5">Phone</label><input type="tel" placeholder="+91 98765 43210" class="w-full bg-dark-800 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:border-teal-400 focus:outline-none transition"></div>
+                </div>
+                <div><label class="text-xs text-gray-500 block mb-1.5">Treatment Interest</label><select class="w-full bg-dark-800 border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-400 focus:border-teal-400 focus:outline-none transition"><option>General Check-up & Cleaning</option><option>Root Canal Treatment</option><option>Teeth Whitening</option><option>Braces / Aligners</option><option>Dental Implants</option><option>Kids Dentistry</option><option>Other</option></select></div>
+                <div><label class="text-xs text-gray-500 block mb-1.5">Preferred Time</label><select class="w-full bg-dark-800 border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-400 focus:border-teal-400 focus:outline-none transition"><option>Morning (9AM-12PM)</option><option>Afternoon (12PM-4PM)</option><option>Evening (4PM-8PM)</option></select></div>
+                <button type="submit" class="w-full bg-teal-500 hover:bg-teal-600 text-white py-4 rounded-xl font-semibold text-sm transition">Book Free Consultation →</button>
+            </form>
+            <div id="form-success" class="hidden bg-dark-900 border border-teal-400/30 rounded-2xl p-8 text-center">
+                <div class="text-4xl mb-4">🦷</div>
+                <h3 class="font-bold text-xl text-teal-400 mb-2">Appointment Requested!</h3>
+                <p class="text-gray-400 text-sm">We'll confirm your slot within 2 hours. See you at the clinic!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-dark-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-2 mb-3"><div class="w-6 h-6 bg-teal-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">S</div><span class="font-bold text-white">SmileCraft Dental</span></div>
+            <p class="text-gray-600 text-sm mb-4">Near Charni Road Station, Girgaon, Mumbai 400004</p>
+            <div class="flex justify-center gap-6 text-sm text-gray-600">
+                <a href="https://wa.me/919999999999" class="hover:text-teal-400 transition">WhatsApp</a>
+                <a href="https://maps.google.com" class="hover:text-teal-400 transition">Directions</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-0 inset-x-0 bg-dark-900/95 backdrop-blur-md border-t border-white/10 p-3 flex gap-2 md:hidden z-50">
+        <a href="https://wa.me/919999999999" class="flex-1 bg-green-600 text-white text-center py-3 rounded-xl text-sm font-bold">💬 WhatsApp</a>
+        <a href="tel:+919999999999" class="flex-1 bg-teal-500 text-white text-center py-3 rounded-xl text-sm font-bold">📞 Call</a>
+    </div>
+
+    <script>document.getElementById('book-form').addEventListener('submit',function(e){e.preventDefault();this.classList.add('hidden');document.getElementById('form-success').classList.remove('hidden')});</script>
+</body>
+</html>
